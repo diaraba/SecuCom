@@ -44,7 +44,7 @@ public class TestController {
   @PreAuthorize("hasRole('ADMIN')")
   public String adminAccess(Principal user) {
 
-    return "Bienvenue " + userRepository.findByUsername(user.getName()).get().getUsername() +
+    return "Bienvenue " + userRepository.findByUsername(user.getName()).get().getUsername() + "  "+
             roleRepository.findByName(ERole.ROLE_ADMIN).get().getName();
   }
 }
